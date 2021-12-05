@@ -1,5 +1,6 @@
 namespace Aoc;
 
+[Trait("Day", "02")]
 public class Day02
 {
     private readonly ITestOutputHelper _output;

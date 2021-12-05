@@ -8,3 +8,8 @@ global using MoreLinq;
 global using Xunit;
 global using Xunit.Abstractions;
 global using Aoc;
+global using Microsoft.Toolkit.HighPerformance;
+global using Microsoft.Toolkit.HighPerformance.Buffers;
+global using Microsoft.Toolkit.HighPerformance.Enumerables;
+global using Microsoft.Toolkit.HighPerformance.Extensions;
+global using Microsoft.Toolkit.HighPerformance.Helpers;

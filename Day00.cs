@@ -1,5 +1,5 @@
 //namespace Aoc;
-
+//[Trait("Day", "00")]
 //public class Day00
 //{
 //    private readonly ITestOutputHelper _output;
