@@ -15,7 +15,7 @@ public class Day05
     {
         var testLines = _testInput1.ReadFileLines().Select(c => c.GetLine()).ToArray();
         int result = GetGridStuff(testLines);
-        result.Should().Be(5);
+        _ = result.Should().Be(5);
 
         var realInput = _input1.ReadFileLines().Select(c => c.GetLine()).ToArray();
         _output.WriteLine(GetGridStuff(realInput));
@@ -27,13 +27,13 @@ public class Day05
     {
         var testLines = _testInput1.ReadFileLines().Select(c => c.GetLine()).ToArray();
         int result = GetGridStuff(testLines, true);
-        result.Should().Be(12);
+        _ = result.Should().Be(12);
 
         var realInput = _input1.ReadFileLines().Select(c => c.GetLine()).ToArray();
         _output.WriteLine(GetGridStuff(realInput, true));
     }
 
-    private int GetGridStuff((int x1, int y1, int x2, int y2)[] points, bool part2 = false)
+    private static int GetGridStuff((int x1, int y1, int x2, int y2)[] points, bool part2 = false)
     {
         var map = new Dictionary<(int X, int Y), int>();
 

@@ -33,24 +33,24 @@ public static class Extensions
                 break;
 
             count++;
-            haystack = haystack.Slice(x + match.Length);
+            haystack = haystack[(x + match.Length)..];
         }
 
         return count;
     }
 
     public static CharSpanSplitter Split(this ReadOnlySpan<char> input)
-        => new CharSpanSplitter(input);
+        => new(input);
 
     public static CharSpanSplitter Split(this Span<char> input)
-        => new CharSpanSplitter(input);
+        => new(input);
 }
 
 public readonly ref struct CharSpanSplitter
 {
     readonly ReadOnlySpan<char> _input;
     public CharSpanSplitter(ReadOnlySpan<char> input) => _input = input;
-    public Rator GetEnumerator() => new Rator(_input);
+    public Rator GetEnumerator() => new(_input);
 
     public ref struct Rator   // Forward-only enumerator
     {

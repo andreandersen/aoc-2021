@@ -23,53 +23,8 @@ public class Day04
     public void Second()
     {
         _ = new BingoGame(_testInput1.ReadFileLines()).LastToWin().Should().Be(1924);
-        var game = new BingoGame(_input1.ReadFileLines());
         _output.WriteLine(new BingoGame(_input1.ReadFileLines()).LastToWin());
     }
-
-    // Not done yet
-    [Fact]
-    public void FirstSimpler()
-    {
-        var data = File.ReadAllText(_input1).AsSpan();
-        var firstLine = data.Slice(0, data.IndexOf('\n'));
-        Span<int> nums = stackalloc int[firstLine.Count(',')];
-        var numEnumerator = firstLine.Tokenize(',');
-
-        var tail = data.Slice(firstLine.Length + 2);
-        var boardCount = tail.Count("\n\n") + 1;
-
-        Span<Cell> boardData = stackalloc Cell[boardCount * 25];
-        
-        //var x = 0;
-        //for (int i = 1; i < data.Length; i++)
-        //{
-        //    var cardNums = data[i].Split(new[] { ' ', '\n' },
-        //        StringSplitOptions.RemoveEmptyEntries);
-        //    foreach (var num in cardNums)
-        //    {
-        //        s[x++] = new Cell { Num = int.Parse(num) };
-        //    }
-        //}
-
-        //var winningScores = new int[numCards];
-        //var winningCards = new bool[numCards];
-
-        //for (int q = 0; q < winningCards.Length; q++)
-        //{
-        //    if (winningCards[q])
-        //        continue;
-
-
-        //}
-    }
-
-    private struct Cell
-    {
-        public int Num;
-        public bool Marked;
-    }
-
 }
 
 public sealed class BingoGame
